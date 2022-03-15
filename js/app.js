@@ -22,6 +22,38 @@ let operationHour = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', 
 
 let cookiesSold= document.getElementById('cookies-sold');
 
+function custperHour(minCust, maxCust){
+  return Math.floor(Math.random() * (this.maxCust - this.minCust + 1) + this.minCust);
+}
+
+
+
+// ************* CONSTRUCTOR FUNCTION REFACTOR ******************
+
+let shop = [];
+
+function Store(name, minCust, maxCust, avgCookie){
+  this.name = name;
+  this.minCust = minCust;
+  this.maxCust = maxCust;
+  this.avgCookie = avgCookie;
+  this.cookiesBought = [];
+  this.totalCookies = 0;
+
+  shop.push(this);
+}
+
+
+
+// USE PROTOTYPE TO DEFINE METHODS - PROTOTYPE = INHERITS
+
+Store.prototype.custperHour = function(){
+  
+};
+
+
+
+
 
 
 
@@ -245,3 +277,16 @@ let lima = {
 
 lima.cookieperHour();
 lima.render();
+
+
+
+// Varables
+
+// custperHour
+
+// cookieperhour
+
+// render function
+
+//// For every hour, calculate, how many cookies are purch, based off of the random number cust that comes in. and by the average cookie the cust is buying
+// console.log(seattle.custperHour());
