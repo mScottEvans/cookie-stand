@@ -26,8 +26,8 @@ let operationHour = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', 
 
 let cookiesSold = document.getElementById('cookies-sold');
 console.log(cookiesSold);
-  let tableElem = document.createElement('table');
-  cookiesSold.appendChild(tableElem);
+let tableElem = document.createElement('table');
+cookiesSold.appendChild(tableElem);
 
 
 
@@ -50,6 +50,8 @@ function Store(name, minCust, maxCust, avgCookie){
   this.minCust = minCust;
   this.maxCust = maxCust;
   this.avgCookie = avgCookie;
+
+
   this.cookiesBought = [];
   this.totalCookies = 0;
       
@@ -75,37 +77,7 @@ Store.prototype.cookiesperHour = function(){
   }
   console.log(this.totalCookies);
   console.log(this);
-}
-    
-// ************DOM*********************************************
-
-// Store.prototype.render = function(){
-  
-//   let articleElem = document.createElement('article');
-  
-//   storeSection.appendChild(articleElem);
-
-  
-//   let h2Elem = document.createElement('h2');
-  
-//   h2Elem.innerText = this.name;
-  
-//   articleElem.appendChild(h2Elem);
-
-//   let pElem = document.createElement('p');
-//   pElem.textContent = ;
-//   articleElem.appendChild(pElem);
-
-//   let ulElem = document.createElement('ul');
-//   articleElem.appendChild(ulElem);
-
-//   for(let i = 0; i < this.interests.length; i++){
-//     let liElem = document.createElement('li');
-//     liElem.textContent = this.interests[i];
-//     ulElem.appendChild(liElem);
-//   }
-// ************************************************************
-
+};
 
 // ***** DOM MANIPULATION *****
 
@@ -113,6 +85,7 @@ Store.prototype.render = function(){
 
   let rowElem = document.createElement('tr');
   tableElem.appendChild(rowElem);
+
   let tableDataElem = document.createElement('td');
   tableDataElem.textContent = this.name;
   rowElem.appendChild(tableDataElem);
@@ -125,8 +98,8 @@ Store.prototype.render = function(){
     rowElem.appendChild(tableDataElem);
   }
   tableDataElem = document.createElement('td');
-    tableDataElem.textContent = this.totalCookies;
-    rowElem.appendChild(tableDataElem);
+  tableDataElem.textContent = this.totalCookies;
+  rowElem.appendChild(tableDataElem);
 
 
 };
@@ -135,9 +108,9 @@ Store.prototype.render = function(){
 function renderHeader(){
   let rowElem = document.createElement('tr');
   tableElem.appendChild(rowElem);
-
   let tableHeadElem = document.createElement('th');
   rowElem.appendChild(tableHeadElem);
+
 
   for(let i = 0; i < operationHour.length; i++){ 
     tableHeadElem = document.createElement('th');
@@ -149,16 +122,11 @@ function renderHeader(){
   }
   tableHeadElem = document.createElement('th');
 
-    tableHeadElem.textContent = 'total';
+  tableHeadElem.textContent = 'total';
 
-    rowElem.appendChild(tableHeadElem);
+  rowElem.appendChild(tableHeadElem);
 }
 
-
-
-
-
-//********************************************************
 
 
 new Store('Seattle', 23, 65, 6.3);
