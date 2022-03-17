@@ -94,7 +94,7 @@ Store.prototype.render = function(){
   let tableDataElem = document.createElement('td');
   tableDataElem.textContent = this.name;
   rowElem.appendChild(tableDataElem);
-
+  
 
 
   for(let i = 0; i < operationHour.length; i++){ 
@@ -161,14 +161,14 @@ renderAllStore();
 function handleSubmit(event){
   event.preventDefault();
 
-  let cityName = event.target.cityName;
-  let minCust = event.target.minCust;
-  let maxCust = event.target.maxCust;
-  let avgCookie = event.target.avgCookie;
+  let cityName = event.target.cityName.value;
+  let minCust = event.target.minCust.value;
+  let maxCust = event.target.maxCust.value;
+  let avgCookie = event.target.avgCookie.value;
 
   let newStore = new Store(cityName, minCust, maxCust, avgCookie);
 
-  newStore.getStore();
+  newStore.getCustperHour();
   newStore.render();
 }
 // step 2
