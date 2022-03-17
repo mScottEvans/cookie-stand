@@ -384,3 +384,10 @@ renderAllStore();
 
 // //// For every hour, calculate, how many cookies are purch, based off of the random number cust that comes in. and by the average cookie the cust is buying
 // // console.log(seattle.custperHour());
+
+
+
+
+
+
+
