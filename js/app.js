@@ -14,11 +14,16 @@
 // Pat will need to be able to add and remove locations from the daily projections report.
 // Pat will also need to be able to easily modify the input numbers for each location based on day of the week, special events, and other factors.
 
+// ***********EVENT and FORM ************
+let myForm = document.getElementById('cookie-form');
+// ***********EVENT and FORM ************
+
+
 // Step: 1
 // create JS object literals for each shop location.
 
 
-
+// 
 
 // GLOBAL*********************
 let operationHour = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
@@ -147,6 +152,55 @@ function renderAllStore(){
 console.log(shop);
 renderAllStore();
 
+
+
+
+
+// ***********EVENT and FORM ************
+// STEP 3
+function handleSubmit(event){
+  event.preventDefault();
+
+  let cityName = event.target.cityName;
+  let minCust = event.target.minCust;
+  let maxCust = event.target.maxCust;
+  let avgCookie = event.target.avgCookie;
+
+  let newStore = new Store(cityName, minCust, maxCust, avgCookie);
+
+  newStore.getStore();
+  newStore.render();
+}
+// step 2
+myForm.addEventListener('submit', handleSubmit);
+// ***********EVENT and FORM ************
+
+
+
+//************Event Function Example********* */
+// function handleSubmit(event){
+//   // prevent the browser from sending my info to wherever it takes it
+//   event.preventDefault();
+
+//   let name = event.target.kittyName.value;
+//   let interests = event.target.interests.value;
+
+//   interests = interests.split(',');
+//   let photo = event.target.photo.value;
+
+//   let isGoodWithCats = event.target.isGoodWithCats.checked;
+//   let isGoodWithDogs = event.target.isGoodWithDogs.checked;
+//   let isGoodWithKids = event.target.isGoodWithKids.checked;
+
+//   // Run these variables through my construtor
+
+//   let newKitten = new Kitten(name, interests, isGoodWithCats, isGoodWithDogs, isGoodWithKids, photo);
+
+//   newKitten.getAge();
+//   newKitten.render();
+
+// }
+//************Event Function Example********* */
 
 
 
