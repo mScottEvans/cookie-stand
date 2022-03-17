@@ -168,7 +168,7 @@ function handleSubmit(event){
 
   let newStore = new Store(cityName, minCust, maxCust, avgCookie);
 
-  newStore.getCustperHour();
+  newStore.getCustperHour(); 
   newStore.render();
 }
 // step 2

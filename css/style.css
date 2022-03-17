@@ -1,8 +1,16 @@
+*{
+  box-sizing: border-box;
+  margin-left: 50px;
+}
 html{
   background-color: darkgoldenrod;
 }
 .main-header {
+  margin-left: 150px;
+  margin-right: 150px;
+  border: 3px solid black;
   background-color: burlywood;
+  
 }
 table{
   border: 2px solid black;
@@ -17,9 +25,16 @@ main{
   margin-right: 150px;
   margin-bottom: 80px;
 }
+.fishHeading{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
 header main img{
   border: 3px solid blue;
+  border-radius: 50;
 }
+
 
 nav ul{
   margin-left: 150px;
@@ -27,8 +42,12 @@ nav ul{
   /* border: 3px solid black; */
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-around;
   margin-bottom: 30px;
+  width: 100%;
+}
+nav a:hover {
+  background-color: grey;
 }
 
 main ul{
@@ -74,4 +93,6 @@ button{
 }
 footer{
   border: 3px solid black;
+
+}
   
