@@ -15,6 +15,8 @@ console.log(cookiesSold);
 let tableElem = document.createElement('table');
 cookiesSold.appendChild(tableElem);
 
+
+
 //******************************CONSTRUCTORS************************************
 function Store(name, minCust, maxCust, avgCookie){
   this.name = name;
@@ -94,17 +96,54 @@ function renderHeader(){
   rowElem.appendChild(tableHeadElem);
 }
 
-for( let i = 0; i < shop.length; i++){
-  for( let j = 0; j < shop[i].cookiesBought.length; j++){
-    console.log(shop[i].cookiesBought[j]);
+
+function hourlyTotal(){ 
+  let rowElem = document.createElement('tr');
+  tableElem.appendChild(rowElem);
+
+
+  let tableDataElem = document.createElement('td');
+  tableDataElem.textContent = 'total';
+  rowElem.appendChild(tableDataElem);
+
+
+  let hourlyTotalArr = [];
+  for(let i = 0; i < operationHour.length; i++){
+    let hourTotal = 0;
+    for( let j = 0; j < shop.length; j++){
+      hourTotal += shop[j].cookiesBought[i];
+    }
+    hourlyTotalArr.push(hourTotal);
   }
+  for(let i = 0; i < operationHour.length; i++){ 
+    tableDataElem = document.createElement('td');
+    tableDataElem.textContent = hourlyTotalArr[i];
+    rowElem.appendChild(tableDataElem);
+  }
+  let dailyTotal = 0;
+  for(let i = 0; i < hourlyTotalArr.length; i++){
+    dailyTotal += hourlyTotalArr[i];
+  }
+
+
+  tableDataElem = document.createElement('td');
+  tableDataElem.textContent = dailyTotal;
+  rowElem.appendChild(tableDataElem);
+
 }
+
+
+
+
+
+
 
 function renderAllStore(){
   renderHeader();
   for(let i = 0; i < shop.length; i++){
     shop[i].render();
   }
+  hourlyTotal();
 }
 
 //**************************EVENT LISTENERS*******************************
@@ -123,7 +162,11 @@ function handleSubmit(event){
 
   let newStore = new Store(cityName, minCust, maxCust, avgCookie);
 
+  let tableElem = document.createElement('table');
+  
   newStore.render();
+  hourlyTotal();
+  
 }
 
 
@@ -135,6 +178,8 @@ new Store('Paris', 20,	38,	2.3);
 new Store('Lima', 2,	16,	4.6);
 
 renderAllStore();
+
+
 
 
 
