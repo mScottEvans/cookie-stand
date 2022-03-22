@@ -2,6 +2,9 @@
   box-sizing: border-box;
   margin-left: 50px;
 }
+main ul{
+  font-size: 40pt;
+}
 html{
   background-color: darkgoldenrod;
 }
